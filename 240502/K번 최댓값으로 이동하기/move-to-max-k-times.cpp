@@ -35,6 +35,7 @@ int main() {
         int Max=0;
         q.push({cur_r,cur_c});
         vis[cur_r][cur_c]=1;
+        bool Moved=false;
         while(!q.empty()) {
             isPos=false;
             pair<int,int> cur=q.front();
@@ -62,7 +63,7 @@ int main() {
                     }
                     q.push({nx,ny});
                     vis[nx][ny]=1;
-                    
+                    Moved=true;
                 }
                 //isPos=true;
                 
@@ -72,7 +73,7 @@ int main() {
             //     c=cur.Y;
             // }
         }
-        if(cur_r==ori_r&&cur_c==ori_c) break;
+        if(!Moved) break;
         
     }
     cout<<cur_r<<' '<<cur_c;
