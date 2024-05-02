@@ -71,7 +71,7 @@ int main() {
             //     c=cur.Y;
             // }
         }
-        if(cur_r==ori_r&&cur_c==ori_c) break;
+        //if(cur_r==ori_r&&cur_c==ori_c) break;
         
     }
     cout<<cur_r<<' '<<cur_c;
