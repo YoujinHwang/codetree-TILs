@@ -34,6 +34,7 @@ int main() {
 
         int Max=0;
         q.push({cur_r,cur_c});
+        vis[cur_r][cur_c]=1;
         while(!q.empty()) {
             isPos=false;
             pair<int,int> cur=q.front();
@@ -61,7 +62,7 @@ int main() {
                     }
                     q.push({nx,ny});
                     vis[nx][ny]=1;
-
+                    
                 }
                 //isPos=true;
                 
@@ -71,7 +72,7 @@ int main() {
             //     c=cur.Y;
             // }
         }
-        //if(cur_r==ori_r&&cur_c==ori_c) break;
+        if(cur_r==ori_r&&cur_c==ori_c) break;
         
     }
     cout<<cur_r<<' '<<cur_c;
