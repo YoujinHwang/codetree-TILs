@@ -21,15 +21,19 @@ int main() {
         }
     }
     cin>>r>>c;
+    int cur_r=r;
+    int cur_c=c;
     while(k--){
         for(int i=1;i<=n;i++) {
             for(int j=1;j<=n;j++) {
                 vis[i][j]=0;
             }
         }
-       
+        int ori_r=cur_r;
+        int ori_c=cur_c;
+
         int Max=0;
-        q.push({r,c});
+        q.push({cur_r,cur_c});
         while(!q.empty()) {
             isPos=false;
             pair<int,int> cur=q.front();
@@ -38,20 +42,20 @@ int main() {
                 int nx=cur.X+dx[i];
                 int ny=cur.Y+dy[i];
                 if(nx<1||ny<1||nx>n||ny>n) continue;
-                if(arr[nx][ny]>=arr[r][c]) continue;
+                if(arr[nx][ny]>=arr[cur_r][cur_c]) continue;
                 if(!vis[nx][ny]) {
                     if(Max<arr[nx][ny]) {
                         Max=arr[nx][ny];
-                        r=nx;
-                        c=ny;
+                        cur_r=nx;
+                        cur_c=ny;
                     }
                     else if(Max==arr[nx][ny]) {
-                        if(r>nx) {
-                            r=nx;
+                        if(cur_r>nx) {
+                            cur_r=nx;
                         }
-                        else if(r==nx) {
-                            if(c>ny) {
-                                c=ny;
+                        else if(cur_r==nx) {
+                            if(cur_c>ny) {
+                                cur_c=ny;
                             }
                         }
                     }
@@ -67,9 +71,9 @@ int main() {
             //     c=cur.Y;
             // }
         }
-        
+        if(cur_r==ori_r&&cur_c==ori_c) break;
         
     }
-    cout<<r<<' '<<c;
+    cout<<cur_r<<' '<<cur_c;
     return 0;
 }
