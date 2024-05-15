@@ -7,6 +7,10 @@ int main() {
     int n,m;
     int ans=0;
     cin>>n>>m;
+    if(n==1) {
+        cout<<2;
+        return 0;
+    }
     for(int i=0;i<n;i++) 
         for(int j=0;j<n;j++) 
             cin>>arr[i][j];
