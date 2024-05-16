@@ -61,7 +61,7 @@ int main() {
     }
     for(int i=0;i<n-2;i++) {
         for(int j=0;j<m;j++) {
-            Sum=rec2(i,j);
+            Sum=rec3(i,j);
             Max=max(Max,Sum);
         }
     }
