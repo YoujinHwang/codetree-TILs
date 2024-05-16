@@ -31,7 +31,7 @@ int rec2(int a,int b) {
 }
 int rec3(int a,int b) {
     int sum=0;
-    for(int i=b;i<b+3;i++) {
+    for(int i=a;i<a+3;i++) {
         sum+=arr[i][b];
     }
     return sum;
